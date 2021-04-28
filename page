@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://x.daohuolab.com/courses/8930?s=1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>21312s</title>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="./js/APlayer.min.css" rel="stylesheet">
+    <link href="./js/weui.min.css" rel="stylesheet">
+    <script src="./js/hm.js"></script><script type="text/javascript" src="./js/common.js"></script>
+    <style>
+        * {
+            font-size: 14px;
+            color: #404040;
+        }
+        ::-webkit-scrollbar {
+            display: none
+        }
+        .banner {
+            position: relative;
+        }
+        .banner:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.4);
+        }
+        .banner .bg {
+            height: 240px;
+            background-size: cover;
+                            background-image: url(https://piccdn3.umiwi.com/img/202103/23/202103231447506379290793.jpeg);
+                    }
+        .banner .con {
+            position: absolute;
+            bottom: 20px;
+            left: 15px;
+            z-index: 10;
+        }
+        .banner .con p {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .con-list {
+            padding: 10px;
+            padding-top: 0px;
+        }
+        .con-list .link {
+            display: block;
+            border-bottom: 1px solid #e1e1e1;
+            padding: 12px 5px;
+            position: relative;
+            overflow: hidden;
+            zoom: 1;
+        }
+        .con-list .link .play-btn {
+            float: left;
+            width: 24px;
+        }
+        .con-list .link .title {
+            text-indent: 10px;
+            line-height: 24px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .con-list .time {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+        .more-btn {
+            display: block;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+        }
+        .type {
+            display: inline-block;
+        }
+        .ops-con {
+            padding: 12px;
+            border-bottom: 1px solid #e1e1e1;
+            background: #fafafa;
+            height: 20px;
+        }
+        .ops-con .sort {
+            height: 20px;
+            line-height: 20px;
+            float: right;
+            padding: 0px 15px;
+        }
+        .ops-con .sort img {
+            height: 20px;
+            float: left;
+            display: inline-block;
+        }
+        .ops-con .sort span {
+            font-size: 14px;
+            display: inline-block;
+            line-height: 20px;
+            margin-left: 4px;
+        }
+        .last {
+            background: #ffa42f;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            color: #fff;
+            padding: 0px 5px;
+            font-size: 12px;
+            display: none;
+        }
+        .record .last {
+            display: inline-block;
+        }
+        .record .title {
+            color: #ffa42f !important;
+        }
+        .aplayer-con {
+            min-height: 54px;
+            top: 0;
+            z-index: 999;
+            width: 100%;
+            background: #fff;
+            border-top: 1px solid #e1e1e1;
+        }
+        .aplayer-con .aplayer {
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .aplayer .aplayer-author {
+            display: none !important;
+        }
+        .aplayer .aplayer-pic {
+            background-color: #fff !important;
+        }
+        .ycolor{color:#ffa42f}
+        .top {
+            padding: 10px;
+            background: #fafafa;
+        }
+        .tab {
+            width: 50%;
+            margin: 0 auto;
+        }
+        .titem {
+            display: table-cell;
+            position: relative;
+            width: 1%;
+            line-height: 34px;
+            text-align: center;
+            vertical-align: middle;
+            border-radius: 0;
+            position: relative;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #ff6b00;
+            background: transparent;
+            color: #333;
+        }
+        .titem:first-child {
+            border-top-left-radius: 1.5rem;
+            border-bottom-left-radius: 1.5rem;
+        }
+        .titem:last-child {
+            border-top-right-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+            border-left-width: 0;
+        }
+        .tactive {
+            color: #ff6b00;
+        }
+        .dintro {
+            position: absolute;
+            z-index: 10;
+            right: 20px;
+            top: 20px;
+            display: inline-block;
+            padding: 5px 20px;
+            border: 1px white solid;
+            color: #fff;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body data-cid="8930"><div id="like996_identification" style="background-color: rgba(211, 211, 211, 0.86); align-items: center; justify-content: center; position: fixed; color: black; top: -2em; height: 2em; margin: 0em; padding: 3px 0em 0em; font-size: 1.2em; width: 100%; left: 0px; right: 0px; text-align: center; z-index: 2147483647;">Text.</div>
+<div class="">
+
+    <div class="top">
+        <div class="tab">
+            <div class="titem"><a href="http://x.daohuolab.com/courses/8930">看图文</a></div>
+            <div class="titem tir tactive">听音频</div>
+        </div>
+    </div>
+
+    <div class="aplayer-con">
+        <div id="player" class="aplayer">
+<div class="aplayer-body">
+    <div class="aplayer-pic" style="background-image: url(&quot;/assets/img/audio.png&quot;);background-color: #ffa42f;">
+        <div class="aplayer-button aplayer-play"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 31"><path d="M15.552 15.168q0.448 0.32 0.448 0.832 0 0.448-0.448 0.768l-13.696 8.512q-0.768 0.512-1.312 0.192t-0.544-1.28v-16.448q0-0.96 0.544-1.28t1.312 0.192z"></path></svg></div>
+    </div>
+    <div class="aplayer-info">
+        <div class="aplayer-music">
+            <span class="aplayer-title">发刊词｜你跟乾隆的关系，到底有多深？</span>
+            <span class="aplayer-author"> - -</span>
+        </div>
+        <div class="aplayer-lrc">
+            <div class="aplayer-lrc-contents" style="transform: translateY(0); -webkit-transform: translateY(0);"></div>
+        </div>
+        <div class="aplayer-controller">
+            <div class="aplayer-bar-wrap">
+                <div class="aplayer-bar">
+                    <div class="aplayer-loaded" style="width: 100%;"></div>
+                    <div class="aplayer-played" style="width: 0; background: #ffa42f;">
+                        <span class="aplayer-thumb" style="background: #ffa42f;">
+                            <span class="aplayer-loading-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32"><path d="M4 16c0-6.6 5.4-12 12-12s12 5.4 12 12c0 1.2-0.8 2-2 2s-2-0.8-2-2c0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8c1.2 0 2 0.8 2 2s-0.8 2-2 2c-6.6 0-12-5.4-12-12z"></path></svg></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="aplayer-time">
+                <span class="aplayer-time-inner">
+                    <span class="aplayer-ptime">00:00</span> / <span class="aplayer-dtime">06:41</span>
+                </span>
+                <span class="aplayer-icon aplayer-icon-back">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32"><path d="M25.468 6.947c-0.326-0.172-0.724-0.151-1.030 0.057l-6.438 4.38v-3.553c0-0.371-0.205-0.71-0.532-0.884-0.326-0.172-0.724-0.151-1.030 0.057l-12 8.164c-0.274 0.186-0.438 0.496-0.438 0.827s0.164 0.641 0.438 0.827l12 8.168c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-3.556l6.438 4.382c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-16.333c0-0.371-0.205-0.71-0.532-0.884z"></path></svg>
+                </span>
+                <span class="aplayer-icon aplayer-icon-play">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 31"><path d="M15.552 15.168q0.448 0.32 0.448 0.832 0 0.448-0.448 0.768l-13.696 8.512q-0.768 0.512-1.312 0.192t-0.544-1.28v-16.448q0-0.96 0.544-1.28t1.312 0.192z"></path></svg>
+                </span>
+                <span class="aplayer-icon aplayer-icon-forward">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32"><path d="M25.468 6.947c-0.326-0.172-0.724-0.151-1.030 0.057l-6.438 4.38v-3.553c0-0.371-0.205-0.71-0.532-0.884-0.326-0.172-0.724-0.151-1.030 0.057l-12 8.164c-0.274 0.186-0.438 0.496-0.438 0.827s0.164 0.641 0.438 0.827l12 8.168c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-3.556l6.438 4.382c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-16.333c0-0.371-0.205-0.71-0.532-0.884z"></path></svg>
+                </span>
+                <div class="aplayer-volume-wrap">
+                    <button type="button" class="aplayer-icon aplayer-icon-volume-down"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 28 32"><path d="M13.728 6.272v19.456q0 0.448-0.352 0.8t-0.8 0.32-0.8-0.32l-5.952-5.952h-4.672q-0.48 0-0.8-0.352t-0.352-0.8v-6.848q0-0.48 0.352-0.8t0.8-0.352h4.672l5.952-5.952q0.32-0.32 0.8-0.32t0.8 0.32 0.352 0.8zM20.576 16q0 1.344-0.768 2.528t-2.016 1.664q-0.16 0.096-0.448 0.096-0.448 0-0.8-0.32t-0.32-0.832q0-0.384 0.192-0.64t0.544-0.448 0.608-0.384 0.512-0.64 0.192-1.024-0.192-1.024-0.512-0.64-0.608-0.384-0.544-0.448-0.192-0.64q0-0.48 0.32-0.832t0.8-0.32q0.288 0 0.448 0.096 1.248 0.48 2.016 1.664t0.768 2.528z"></path></svg></button>
+                    <div class="aplayer-volume-bar-wrap">
+                        <div class="aplayer-volume-bar">
+                            <div class="aplayer-volume" style="height: 70%; background: rgb(255, 164, 47);"></div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="aplayer-icon aplayer-icon-order">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32"><path d="M0.622 18.334h19.54v7.55l11.052-9.412-11.052-9.413v7.549h-19.54v3.725z"></path></svg>
+                </button>
+                <button type="button" class="aplayer-icon aplayer-icon-loop">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 29 32"><path d="M2.667 7.027l1.707-1.693 22.293 22.293-1.693 1.707-4-4h-11.64v4l-5.333-5.333 5.333-5.333v4h8.973l-8.973-8.973v0.973h-2.667v-3.64l-4-4zM22.667 17.333h2.667v5.573l-2.667-2.667v-2.907zM22.667 6.667v-4l5.333 5.333-5.333 5.333v-4h-10.907l-2.667-2.667h13.573z"></path></svg>
+                </button>
+                <button type="button" class="aplayer-icon aplayer-icon-menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 22 32"><path d="M20.8 14.4q0.704 0 1.152 0.48t0.448 1.12-0.48 1.12-1.12 0.48h-19.2q-0.64 0-1.12-0.48t-0.48-1.12 0.448-1.12 1.152-0.48h19.2zM1.6 11.2q-0.64 0-1.12-0.48t-0.48-1.12 0.448-1.12 1.152-0.48h19.2q0.704 0 1.152 0.48t0.448 1.12-0.48 1.12-1.12 0.48h-19.2zM20.8 20.8q0.704 0 1.152 0.48t0.448 1.12-0.48 1.12-1.12 0.48h-19.2q-0.64 0-1.12-0.48t-0.48-1.12 0.448-1.12 1.152-0.48h19.2z"></path></svg>
+                </button>
+                <button type="button" class="aplayer-icon aplayer-icon-lrc">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32"><path d="M26.667 5.333h-21.333c-0 0-0.001 0-0.001 0-1.472 0-2.666 1.194-2.666 2.666 0 0 0 0.001 0 0.001v-0 16c0 0 0 0.001 0 0.001 0 1.472 1.194 2.666 2.666 2.666 0 0 0.001 0 0.001 0h21.333c0 0 0.001 0 0.001 0 1.472 0 2.666-1.194 2.666-2.666 0-0 0-0.001 0-0.001v0-16c0-0 0-0.001 0-0.001 0-1.472-1.194-2.666-2.666-2.666-0 0-0.001 0-0.001 0h0zM5.333 16h5.333v2.667h-5.333v-2.667zM18.667 24h-13.333v-2.667h13.333v2.667zM26.667 24h-5.333v-2.667h5.333v2.667zM26.667 18.667h-13.333v-2.667h13.333v2.667z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="aplayer-notice"></div>
+    <div class="aplayer-miniswitcher"><button class="aplayer-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32"><path d="M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z"></path></svg></button></div>
+</div>
+<div class="aplayer-list" style="max-height: 250px">
+    <ol style="max-height: 250px">
+        
+<li class="aplayer-list-light">
+    <span class="aplayer-list-cur" style="background-color: #ffa42f;"></span>
+    <span class="aplayer-list-index">1</span>
+    <span class="aplayer-list-title">发刊词｜你跟乾隆的关系，到底有多深？</span>
+    <span class="aplayer-list-author">-</span>
+</li>
+
+    </ol>
+</div>
+</div>
+    </div>
+
+    <div class="banner">
+        <div class="bg"></div>
+        <div class="con">
+            <p>大人物·乾隆评传</p>
+        </div>
+        <a class="dintro" href="http://x.daohuolab.com/courses/detail/8930">课程介绍</a>
+    </div>
+
+    <div class="ops-con">
+        <div class="type">已更新10篇</div>
+    </div>
+    <ul class="con-list" id="j-article-con">
+                    <li class="link record" id="35708d450ef1e5cb594bcc757c45796d" data-key="aHR0cDovL2Rhb2h1b2xhYi5vc3MtY24tYmVpamluZy5hbGl5dW5jcy5jb20vZGQvODkzMF85MzQ4MS95tNGE=" data-id="35708d450ef1e5cb594bcc757c45796d" data-order="1">
+                <img class="play-btn" src="./js/play.png">
+                <p class="title">发刊词｜你跟乾隆的关系，到底有多深？</p>
+            </li>
+                    <li class="link" id="afa3cfee593e324074d74c2d13a61a97" data-key="aHR0cDovL2Rhb2h1b2xhYi5vc3MtY24tYmVpamluZy5hbGl5dW5jcy5jb20vZGQvODkzMF85MzQ4M1i5tNGE=" data-id="afa3cfee593e324074d74c2d13a61a97" data-order="2">
+                <img class="play-btn" src="./js/play.png">
+                <p class="title">01｜认识大一统：乾隆解决了一个什么级别的问题？</p>
+            </li>
+                    <li class="link" id="e1ee35e6f304499783d31cafb08e1d81" data-key="aHR0cDovL2Rhb2h1b2xhYi5vc3MtY24tYmVpamluZy5hbGl5dW5jcy5jb20vZGQvODkzMF85MzQ4ANC5tNGE=" data-id="e1ee35e6f304499783d31cafb08e1d81" data-order="3">
+                <img class="play-btn" src="./js/play.png">
+                <p class="title">02｜权力：大一统的起点在哪里？</p>
+            </li>
+                    <li class="link" id="463ae8c64a8d7318129828b7570b4eeb" data-key="aHR0cDovL2Rhb2h1b2xhYi5vc3MtY24tYmVpamluZy5hbGl5dW5jcy5jb20vZGQvODkzMF85MzQt4NS5tNGE=" data-id="463ae8c64a8d7318129828b7570b4eeb" data-order="4">
+                <img class="play-btn" src="./js/play.png">
+                <p class="title">03｜版图1：为什么一定要征服准噶尔？</p>
+            </li>
+                    <li class="link" id="ea6590520286ec97d81f24a0dbd826f3" data-key="aHR0cDovL2Rhb2h1b2xhYi5vc3MtY24tYmVpamluZy5hbGl5dW5jcy5jb20vZGQvODkzMF85Mz9Q4Ni5tNGE=" data-id="ea6590520286ec97d81f24a0dbd826f3" data-order="5">
+                <img class="play-btn" src="./js/play.png">
+                <p class="title">04｜版图2：乾隆为什么不继续向西扩张？</p>
+            </li>
+                    <li class="link" id="ecfaf27832aa24e4a6949bdf15acd1b6" data-key="aHR0cDovL2Rhb2h1b2xhYi5vc3MtY24tYmVpamluZy5hbGl5dW5jcy5jb20vZGQvODkzMF85MMzQ5Mi5tNGE=" data-id="ecfaf27832aa24e4a6949bdf15acd1b6" data-order="6">
+                <img class="play-btn" src="./js/play.png">
+                <p class="title">05｜军事：清军的战斗力到底怎么样？</p>
+            </li>
+                    <li class="link" id="773c0dac2ce5cbc77cc4f2f3602a173d" data-key="aHR0cDovL2Rhb2h1b2xhYi5vc3MtY24tYmVpamluZy5hbGl5dW5jcy5jb20vZGQvODkzMF85WMzQ5NC5tNGE=" data-id="773c0dac2ce5cbc77cc4f2f3602a173d" data-order="7">
+                <img class="play-btn" src="./js/play.png">
+                <p class="title">06｜经济：大一统的钱从哪里来？</p>
+            </li>
+                    <li class="link" id="507a6965f32d702499488a7392af9a4b" data-key="aHR0cDovL2Rhb2h1b2xhYi5vc3MtY24tYmVpamluZy5hbGl5dW5jcy5jb20vZGQvODkzMF805MzQ5NS5tNGE=" data-id="507a6965f32d702499488a7392af9a4b" data-order="8">
+                <img class="play-btn" src="./js/play.png">
+                <p class="title">07｜外交：为什么乾隆要拒绝英国使团？</p>
+            </li>
+                    <li class="link" id="18f8e79f22bfc726b2ca7ae5300a02be" data-key="aHR0cDovL2Rhb2h1b2xhYi5vc3MtY24tYmVpamluZy5hbGl5dW5jcy5jb20vZGQvODkzMF685MzQ5Ni5tNGE=" data-id="18f8e79f22bfc726b2ca7ae5300a02be" data-order="9">
+                <img class="play-btn" src="./js/play.png">
+                <p class="title">08｜文化：《石渠宝笈》和《四库全书》的背后是什么？</p>
+            </li>
+                    <li class="link" id="0ec3e118a9423fe80b02330bd91963be" data-key="aHR0cDovL2Rhb2h1b2xhYi5vc3MtY24tYmVpamluZy5hbGl5dW5jcy5jb20vZGQvODkzMjF85MzQ5Ny5tNGE=" data-id="0ec3e118a9423fe80b02330bd91963be" data-order="10">
+                <img class="play-btn" src="./js/play.png">
+                <p class="title">09｜满汉：和珅为什么必须死？</p>
+            </li>
+            </ul>
+
+    <div style="height: 60px;"></div>
+
+</div>
+<div class="weui-tab">
+    <div class="weui-tabbar" style="position: fixed!important;z-index: 8;bottom: 0;">
+        <a href="http://x.daohuolab.com/index" class="weui-tabbar__item">
+            <img src="./js/home4.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a href="javascript:void(0);" id="speed-control-tab" class="weui-tabbar__item">
+            <img src="./js/ts2.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">1.0x</p>
+        </a>
+    </div>
+</div>
+<div>
+    <div class="weui-mask" id="as-mask" style="display: none"></div>
+    <div class="weui-actionsheet" id="as-con">
+        <div class="weui-actionsheet__menu">
+            <div class="weui-actionsheet__cell speed-item" data-v="0.7">0.7倍语速</div>
+            <div class="weui-actionsheet__cell speed-item ycolor" data-v="1.0">正常语速</div>
+            <div class="weui-actionsheet__cell speed-item" data-v="1.25">1.25倍语速</div>
+            <div class="weui-actionsheet__cell speed-item" data-v="1.5">1.5倍语速</div>
+            <div class="weui-actionsheet__cell speed-item" data-v="2.0">2.0倍语速</div>
+            <div class="weui-actionsheet__cell speed-item" data-v="2.5">2.5倍语速</div>
+            <div class="weui-actionsheet__cell speed-item" data-v="3.0">3.0倍语速</div>
+        </div>
+        <div class="weui-actionsheet__action">
+            <div class="weui-actionsheet__cell ycolor" id="as-cancel">取消</div>
+        </div>
+    </div>
+</div>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/hls.min.js"></script>
+<script type="text/javascript" src="./js/APlayer.min.js"></script>
+<script src="./js/scrollfix.js"></script>
+<script>
+    eval(function(p,a,c,k,e,r){e=function(c){return(c<62?'':e(parseInt(c/62)))+((c=c%62)>35?String.fromCharCode(c+29):c.toString(36))};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[2-46-9a-oqrtuwyzA-X]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(7(){$(\'.F-G\').scrollFix({side:\'top\'});2 4=$(\'.m\')[0];2 3=\'vYo7uR&\';2 g=$(\'body\').8(\'g\');2 s=n.y.getItem(3+g);H(s&&$(\'#\'+s).h==1){2 a=$(\'#\'+s);a.i(\'j\');I.J(s).scrollIntoView(true);n.scrollBy(0,-100);4=a}K{$(\'.m\').o(\'j\');$(4).i(\'j\');n.y.L(3+g,$(4).M(\'b\'))}2 6=new APlayer({element:I.J(\'player\'),narrow:N,autoplay:N,loop:\'none\',theme:\'#ffa42f\',z:{b:$(4).8(\'b\'),d:$(4).q(\'.d\').A(),pic:\'/assets/img/r.png\',O:t($(4)),author:\'-\'}});6.e(\'ended\',7(){2 4=$(\'#\'+6.P.z.b);2 B=4.next();H(B.h>0){u(B)}K{u(4);6.pause();6.seek(0)}});$(\'.m\').e(\'k\',7(){u($(C))});7 u(9){$(\'.m\').o(\'j\');9.i(\'j\');6.r.src=t(9);6.play();2 c=$(\'.c-D.E\').8(\'v\');6.r.Q=c;$(\'.F-d\').R(9.q(\'.d\').A());6.P.z={b:9.8(\'b\'),O:t(9),d:9.q(\'.d\').A()};n.y.L(3+g,9.M(\'b\'))}2 f=$(\'#f-G\');2 l=$(\'#f-l\');7 w(){f.o(\'S-T\');l.hide()}l.e(\'k\',w);$(\'#f-cancel\').e(\'k\',w);$("#c-U-V").e("k",7(){f.i(\'S-T\');l.show()});$(\'.c-D\').e(\'k\',7(){2 v=$(C).8(\'v\');6.r.Q=v;$(\'#c-U-V\').q(\'p\').R(v+\'x\');$(\'.c-D\').o(\'E\');$(C).i(\'E\');w()});7 t(a){2 3=a.8(\'3\');return atob(3.W(0,3.h-((a.8(\'X\')+5)%16)-1)+3.W(3.h-((a.8(\'X\')+5)%16),3.h))}});',[],60,'||var|key|audioItem||ap|function|data|itemAudio|el|id|speed|title|on|as|cid|length|addClass|record|click|mask|link|window|removeClass||find|audio||aes|playAudio||hideActionSheet||localStorage|music|text|nextAudio|this|item|ycolor|aplayer|con|if|document|getElementById|else|setItem|attr|false|url|options|playbackRate|html|weui|actionsheet_toggle|control|tab|slice|order'.split('|'),0,{}))
+</script>
+
+
+</body></html>
